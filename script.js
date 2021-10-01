@@ -6,32 +6,37 @@ add hover class on hover
 create grid of divs and append them to the container div
 
 use flexbox to make divs into grid
-
-
-
-
 */
+
+
+const container = document.getElementById('container');
 const grid = document.createElement('div');
 container.appendChild(grid);
 grid.classList.add('grid');
 
 
-let square;
-for (let i = 0; i < 16; i++) {
-    square = document.createElement('div');
-    square.className = 'new';
-    grid.appendChild(square);
-}
-for (let i = 0; i < 16; i++) {
-    squareTwo = document.createElement('div');
-    squareTwo.className = 'new';
-    grid.appendChild(squareTwo);
+function makeRows(rows, cols) {
+    grid.style.setProperty('--grid-rows', rows);
+    grid.style.setProperty('--grid-cols', cols);
+    for (let i = 0; i < (rows * cols); i++) {
+        let cell = document.createElement('div');
+        grid.appendChild(cell).className = 'new';
+    }
 }
 
+makeRows(16, 16);
 
+/*
 squareDivs = document.querySelectorAll('.new');
-
 for (let i = 0; i < squareDivs.length; i++) {
+    squareDivs[i].addEventListener('drag', function() {
+        squareDivs[i].classList.add('hover')
+    })
+}
+*/
+squareDivs = document.querySelectorAll('.new');
+for (let i = 0; i < squareDivs.length; i++) {
+    let drag = false;
     squareDivs[i].addEventListener('mouseover', function() {
         squareDivs[i].classList.add('hover')
     })
