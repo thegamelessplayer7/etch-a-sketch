@@ -1,0 +1,17 @@
+.new {
+    background-color: black;
+    width: 120px;
+    height: 120px;
+}
+
+#btn {
+    background-color: red; 
+    height:40px; 
+    width:120px;
+}
+
+.hover {
+    background-color: red;
+    width: 120px;
+    height: 120px; 
+}
