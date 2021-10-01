@@ -1,17 +1,36 @@
+.container {
+    
+}
+
+
+.grid {
+    /*display: grid;
+    grid-auto-flow: column; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;*/
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+
+    
+}
+
+
 .new {
     background-color: black;
     width: 120px;
     height: 120px;
+    flex: 1;
+    
 }
 
-#btn {
-    background-color: red; 
-    height:40px; 
-    width:120px;
-}
+
 
 .hover {
     background-color: red;
     width: 120px;
     height: 120px; 
+    
 }
