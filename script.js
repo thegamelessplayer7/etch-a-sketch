@@ -26,18 +26,20 @@ function makeRows(rows, cols) {
 
 makeRows(16, 16);
 
-/*
+
 squareDivs = document.querySelectorAll('.new');
 for (let i = 0; i < squareDivs.length; i++) {
-    squareDivs[i].addEventListener('drag', function() {
-        squareDivs[i].classList.add('hover')
-    })
-}
-*/
-squareDivs = document.querySelectorAll('.new');
-for (let i = 0; i < squareDivs.length; i++) {
-    let drag = false;
     squareDivs[i].addEventListener('mouseover', function() {
-        squareDivs[i].classList.add('hover')
+        squareDivs[i].classList.add('hover');
+        
+
     })
 }
+
+const clearBtn = document.getElementById('clr-button')
+
+clearBtn.addEventListener('click', () => {
+    for (let i = 0; i < squareDivs.length; i++) {
+    squareDivs[i].classList.remove('hover');
+    }
+})
