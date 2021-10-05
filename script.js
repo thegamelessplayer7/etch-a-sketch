@@ -15,31 +15,36 @@ container.appendChild(grid);
 grid.classList.add('grid');
 
 
-function makeRows(rows, cols) {
+function makeGrid(rows, cols) {
     grid.style.setProperty('--grid-rows', rows);
     grid.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
-        grid.appendChild(cell).className = 'new';
+        grid.appendChild(cell).className = 'reg';
     }
 }
 
-makeRows(16, 16);
+makeGrid(16, 16);
 
+grid.addEventListener('mouseover', function(e) {
+    if(e.target.className === 'reg') {
+        e.target.classList.add('hover');
+    }
+})
 
-squareDivs = document.querySelectorAll('.new');
-for (let i = 0; i < squareDivs.length; i++) {
-    squareDivs[i].addEventListener('mouseover', function() {
-        squareDivs[i].classList.add('hover');
-        
-
-    })
-}
 
 const clearBtn = document.getElementById('clr-button')
 
 clearBtn.addEventListener('click', () => {
+    squareDivs = document.querySelectorAll('.reg');
     for (let i = 0; i < squareDivs.length; i++) {
     squareDivs[i].classList.remove('hover');
     }
+})  
+
+const squaresBtn = document.getElementById('squares-btn');
+
+squaresBtn.addEventListener('click', () => {
+    let num = prompt('How many squares would you like to add?');
+    makeGrid(num, num);
 })
