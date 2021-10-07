@@ -34,41 +34,36 @@ grid.addEventListener('mouseover', function(e) {
 
 
 const clearBtn = document.getElementById('clr-button')
-const squareDivs = document.querySelectorAll('.reg');
+
 clearBtn.addEventListener('click', () => {
-    
+    const squareDivs = document.querySelectorAll('.reg');
     for (let i = 0; i < squareDivs.length; i++) {
     squareDivs[i].classList.remove('hover');
+    squareDivs[i].style.backgroundColor = '';
     }
-})  
+    })
 
-function getRandomColor() {
-    let randomColor = '#';
-    randomColor += Math.floor(Math.random()*16777215).toString(16);
-    for (let i = 0; i < squareDivs.length; i++) {
-    console.log(squareDivs[i]);
-        //squareDivs[i].style.backgroundColor = randomColor;
-    }
-}
-
-function pickColor() {
-    squareDivs.style.backgroundColor = getRandomColor();
-    console.log(squareDivs.style.backgroundColor);
-}
-
-
-
+let colorRandom;
 const randomize = document.getElementById('randomize');
 randomize.addEventListener('click', () => {
-    for(let i = 0; i < squareDivs.length; i++) {
+    
+    grid.addEventListener('mouseover', function(e) {
+        
+        colorRandom = '#'+Math.floor(Math.random()*16777215).toString(16);
+        e.target.style.backgroundColor = colorRandom;
+        
+    }
+    /*for(let i = 0; i < squareDivs.length; i++) {
         squareDivs[i].onmouseover = function(e) {
-            let colorRandom = '#'+Math.floor(Math.random()*16777215).toString(16);
+            colorRandom = '#'+Math.floor(Math.random()*16777215).toString(16);
             let colorString = '0px 0px 30px 0px' + colorRandom;
             this.style['background-color'] = colorRandom;
+            if (squareDivs[i].style.backgroundColor = colorRandom) {
+                console.log('yes'); }
         }
-    } 
-}
-);
+    } */
+
+)});
 
 
 const squaresBtn = document.getElementById('squares-btn');
@@ -85,6 +80,6 @@ squaresBtn.addEventListener('click', () => {
 })
 
 
-document.querySelector('.random').style.backgroundColor = getRandomColor(); 
+
 
 
