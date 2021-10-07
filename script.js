@@ -40,6 +40,7 @@ clearBtn.addEventListener('click', () => {
     for (let i = 0; i < squareDivs.length; i++) {
     squareDivs[i].classList.remove('hover');
     squareDivs[i].style.backgroundColor = '';
+    grid.style.backgroundColor = '';
     }
     })
 
@@ -51,7 +52,7 @@ randomize.addEventListener('click', () => {
         
         colorRandom = '#'+Math.floor(Math.random()*16777215).toString(16);
         e.target.style.backgroundColor = colorRandom;
-        
+        grid.style.backgroundColor = '';
     }
     /*for(let i = 0; i < squareDivs.length; i++) {
         squareDivs[i].onmouseover = function(e) {
