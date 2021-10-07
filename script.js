@@ -47,9 +47,7 @@ clearBtn.addEventListener('click', () => {
 let colorRandom;
 const randomize = document.getElementById('randomize');
 randomize.addEventListener('click', () => {
-    
     grid.addEventListener('mouseover', function(e) {
-        
         colorRandom = '#'+Math.floor(Math.random()*16777215).toString(16);
         e.target.style.backgroundColor = colorRandom;
         grid.style.backgroundColor = '';
@@ -79,6 +77,20 @@ squaresBtn.addEventListener('click', () => {
         makeGrid(num, num);
     }
 })
+
+const removeGrid = document.getElementById('remove-grid');
+removeGrid.addEventListener('click', () => {
+    if (grid.classList == 'grid') {
+    grid.classList.add('grid-2');
+    } else {
+        grid.classList = 'grid';
+    }
+    if (removeGrid.innerHTML == 'Remove Grid') {
+        removeGrid.innerHTML = 'Add Grid';
+    } else {
+        removeGrid.innerHTML = 'Remove Grid';
+    }
+} )
 
 
 
