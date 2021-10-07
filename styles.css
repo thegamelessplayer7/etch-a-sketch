@@ -37,6 +37,7 @@
     background-color: white;
     
     
+    
 
 
 
@@ -68,33 +69,60 @@
     
 }
 
+.random {
+    background-color:  
+    width: 100%;
+    height: 100%;
+}
+
 #clr-button {
     z-index: 999;
     padding: 30px;
     color: white;
-    background-color: blue;
+    background-color: rgb(48, 48, 53);
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    margin-top: 150px;
-    margin-left: 300px;
+    margin-top: 50px;
     border-radius: 20%;
     border-width: 20px;
+    width: auto;
+    height: auto;
+    min-width: 180px;
+}
 
+.btn-div {
+    text-align: center;
+}
+#clr-button, #squares-btn {
+    display: inline-block;
 }
 
 #squares-btn {
     z-index: 999;
     padding: 30px;
-    background-color: blue;
+    background-color: rgb(48, 48, 53);
     color: white;
     border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    margin-top: 150px;
-    margin-left: 0px;
+    cursor: pointer
+    margin-top: 50px;
     border-radius: 20%;
     border-width: 20px;
+    width: auto;
+    height: auto;
+}
+
+#randomize {
+    z-index: 999;
+    padding: 30px;
+    background-color: rgb(48, 48, 53);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer
+    margin-top: 50px;
+    border-radius: 20%;
+    border-width: 20px;
+    width: auto;
+    height: auto;
 }
 
 .h1 {
