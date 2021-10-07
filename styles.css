@@ -34,7 +34,7 @@
     max-height: 500px;
     grid-gap: 1px; 
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(241, 172, 172);
     
     
     
@@ -62,7 +62,7 @@
     max-height: 500px;
     grid-gap: 0px; 
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(230, 169, 169);
 }
 
 
