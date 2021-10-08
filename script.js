@@ -47,9 +47,9 @@ grid.addEventListener('mouseover', function(e) {
 
 
 const clearBtn = document.getElementById('clr-button')
-const squareDivs = document.querySelectorAll('.reg');
+
 clearBtn.addEventListener('click', () => {
-    
+    const squareDivs = document.querySelectorAll('.reg');
     
     for (let i = 0; i < squareDivs.length; i++) {
     squareDivs[i].classList.remove('hover');
@@ -106,7 +106,6 @@ removeGrid.addEventListener('click', () => {
     }
 } )
 
-console.log(squareDivs)
 
 
 
