@@ -15,16 +15,28 @@ container.appendChild(grid);
 grid.classList.add('grid');
 
 
+
+
 function makeGrid(rows, cols) {
     grid.style.setProperty('--grid-rows', rows);
     grid.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement('div');
         grid.appendChild(cell).className = 'reg';
-    }
-}
+    }}
+
+    
 
 makeGrid(16, 16);
+
+function clearGrid() {
+    while (grid.hasChildNodes()) {
+        grid.removeChild(grid.lastChild);
+    }
+    makeGrid(num, num);
+}
+
+
 
 grid.addEventListener('mouseover', function(e) {
     if(e.target.className === 'reg')  {
@@ -33,10 +45,12 @@ grid.addEventListener('mouseover', function(e) {
 })  
 
 
-const clearBtn = document.getElementById('clr-button')
 
+const clearBtn = document.getElementById('clr-button')
+const squareDivs = document.querySelectorAll('.reg');
 clearBtn.addEventListener('click', () => {
-    const squareDivs = document.querySelectorAll('.reg');
+    
+    
     for (let i = 0; i < squareDivs.length; i++) {
     squareDivs[i].classList.remove('hover');
     squareDivs[i].style.backgroundColor = '';
@@ -66,15 +80,15 @@ randomize.addEventListener('click', () => {
 
 
 const squaresBtn = document.getElementById('squares-btn');
-
+let num;
 squaresBtn.addEventListener('click', () => {
-    let num = prompt('How many squares would you like to add?');
+    num = prompt('How many squares would you like to add?');
     if (num > 100) {
         num = prompt('Don\'t enter a number greater than 100!');
     } else if (num < 1) {
         num = prompt('Enter a number greater than 1!');
     } else if (num <= 100) {
-        makeGrid(num, num);
+        clearGrid(num, num);
     }
 })
 
@@ -92,7 +106,7 @@ removeGrid.addEventListener('click', () => {
     }
 } )
 
-
+console.log(squareDivs)
 
 
 
